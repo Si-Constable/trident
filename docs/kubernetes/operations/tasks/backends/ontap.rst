@@ -29,6 +29,8 @@ maximum of 12,000 FlexVols. If your persistent volume requirements fit within
 that limitation, those drivers are the preferred solution due to the granular
 data management capabilities they afford.
 
+These Values are dependant on the information provided in the HWU(hwu.netapp.com). Its important to understand what the current limitations are for the ONTAP platform. Based on the current information (OnTap 9.7) in the HWU you can have 5000 ONLINE volumes for a 2 node HA Pair. This will allow a single node to handle 5000 Volumes in the event of a TakeOver. If there are more than 5000 volumes online in a HA pair in the event of a TakeOver netapp do not guarantee that they will be presented as online.
+
 If you need more persistent volumes than may be accommodated by the FlexVol
 limits, choose the ``ontap-nas-economy`` or the ``ontap-san-economy`` driver.
 
